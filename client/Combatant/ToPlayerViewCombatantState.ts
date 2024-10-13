@@ -54,12 +54,16 @@ function GetHPDisplay(combatant: Combatant): string {
   }
   if (currentHP <= 0) {
     return "<span class='defeatedHP'>Defeated</span>";
-  } else if (currentHP < maxHP / 2) {
+  } else if (currentHP < maxHP * 0.3) {
+    return "<span class='bloodiedHP'>Critical</span>";
+  } else if (currentHP < maxHP * 0.7) {
     return "<span class='bloodiedHP'>Bloodied</span>";
   } else if (currentHP < maxHP) {
     return "<span class='hurtHP'>Hurt</span>";
   }
   return "<span class='healthyHP'>Healthy</span>";
+
+
 }
 
 function GetHPColor(combatant: Combatant) {
